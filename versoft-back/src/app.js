@@ -1,15 +1,15 @@
 const express = require("express")
-const app = express();
+const app = express(); // app es la instancia de express
 const cors= require("cors");
 const morgan = require("morgan");
 
 const router = require("./rutas/index")
 
-app.use(cors());
+app.use(cors()); //
 
-app.use(morgan("dev"));
+app.use(morgan("dev")); //
 
-app.use(express.json());
+app.use(express.json()); // transforma json en objetos
 
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");         // permite conexion de cualquier direccion 
@@ -25,7 +25,7 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use("/", router);
+app.use("/", router); // usa el router como middleware, que manejara los endpoints de las peticiones
 
 
 module.exports = app;
