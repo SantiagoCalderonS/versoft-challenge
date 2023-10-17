@@ -1,33 +1,44 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { Route, Routes } from 'react-router-dom'
+import Busqueda from './componentes/busqueda/busqueda';
+import Inicio from './componentes/inicio/inicio';
+import Barra from './componentes/barra/barra';
+import "./App.css"
 
-function App() {
-  const [count, setCount] = useState(0)
+function App() { 
+  
+  const funcionInit = () => {//funcion sacada de internet que obtiene los datos actuales de la ubicacion del usuario
+    if (!"geolocation" in navigator) {
+      return alert("Tu navegador no soporta el acceso a la ubicación. Intenta con otro");
+    }
+  
+    const onUbicacionConcedida = ubicacion => { //funcion que recibira un objeto con la info de la ubicacion actual
+      console.log("Tengo la ubicación: ", ubicacion);
+    }
+    
+    const onErrorDeUbicacion = err => { // funcion que maneja errores
+      console.log("Error obteniendo ubicación: ", err);//da error si se le niega el acceso a la ubicacion
+    }
+  
+    const opcionesDeSolicitud = {
+      enableHighAccuracy: true, // Alta precisión
+      maximumAge: 0, // No queremos caché
+      timeout: 5000 // Esperar solo 5 segundos
+    };
+    // Solicitar
+    navigator.geolocation.getCurrentPosition(onUbicacionConcedida, onErrorDeUbicacion, opcionesDeSolicitud);
+  
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <button onClick={funcionInit}>dar</button>
+    <Barra/>
+    <Routes>
+      <Route path='/inicio' element={<Inicio/>}/>
+      <Route path='/busqueda' element={<Busqueda/>}/>
+    </Routes>
     </>
   )
 }

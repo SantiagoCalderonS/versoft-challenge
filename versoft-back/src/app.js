@@ -3,7 +3,7 @@ const app = express(); // app es la instancia de express
 const cors= require("cors");
 const morgan = require("morgan");
 
-const router = require("./rutas/index")
+const router = require("./rutas/index")//se importan las rutas atraves de index.js
 
 app.use(cors()); //
 
