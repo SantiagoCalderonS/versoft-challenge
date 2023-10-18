@@ -35,7 +35,7 @@ const Inicio = () =>{
 
     return(
     <div>
-        <button onClick={funcionInit}>dar posicion</button>
+        {!user.latitud && <button onClick={funcionInit}>dar posicion</button>}
         {user.latitud && <Link to={`/reporte/${user.latitud}/${user.longitud}/clima`} ><button>obtener reporte</button></Link>}
     </div>
     )

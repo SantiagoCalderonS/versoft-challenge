@@ -19,8 +19,8 @@ const Reporte = () =>{
     },[])
 
     return(
-        <div>
-            { info.nombre && <h1>{info?.nombre}</h1>}
+        <div className={style.contenedor}>
+            {/*info.nombre && <h1>{info?.nombre}</h1>*/}
             <img src="https://openweathermap.org/img/wn/04d@2x.png"/>
             <FontAwesomeIcon icon={faCoffee} className={style.icons}/>
         </div>

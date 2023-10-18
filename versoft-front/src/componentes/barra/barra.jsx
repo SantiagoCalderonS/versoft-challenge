@@ -13,9 +13,9 @@ const Barra = () =>{
 
     return(
         <div className={style.barraLateral}>
-          <Button variant="primary" onClick={handleShow}>
-        Launch
-      </Button>
+        <Button variant="primary" onClick={handleShow} style={{ width: '90%', backgroundColor: "orange", borderColor: "brown"}}>
+        Explorar
+        </Button>
 
         <Offcanvas show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>

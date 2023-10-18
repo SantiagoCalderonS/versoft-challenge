@@ -2,10 +2,10 @@ const axios = require("axios")
 
 const obtener_ubicacion_por_nombre = async(req, res)=>{
 
-    const {ciudad, pais, cantidad} = req.body
+    const {ciudad, pais} = req.query
 
     try {
-        const {data} = await axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${ciudad},${pais}&limit=${cantidad}&appid=90d6373ae83c945ed2fcd537d83975b1`)
+        const {data} = await axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${ciudad},${pais}&limit=5&appid=90d6373ae83c945ed2fcd537d83975b1`)
         console.log("funciona")
         const paises = []
 

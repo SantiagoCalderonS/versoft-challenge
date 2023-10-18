@@ -1,9 +1,9 @@
 import axios from "axios"
 
-export const conseguir_paises = (obj) =>{
+export const conseguir_paises = ({pais, ciudad}) =>{
     return async (dispatch) => {
         try {
-            const {data} = await axios.get(`http://localhost:3001/ubicacion`, obj); // request
+            const {data} = await axios.get(`http://localhost:3001/ubicacion?pais=${pais}&ciudad=${ciudad}`); // request
             console.log(data)
             return dispatch({
                 type: "CONSEGUIR_LISTA",

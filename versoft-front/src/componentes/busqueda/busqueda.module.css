@@ -1,0 +1,10 @@
+.contenedor{
+    width: 100%;
+   
+}
+
+.buscador{
+ width: 90%;
+ position: absolute;
+ top: 5%;
+}
