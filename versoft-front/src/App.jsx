@@ -1,10 +1,12 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import Busqueda from './componentes/busqueda/busqueda';
 import Inicio from './componentes/inicio/inicio';
 import Barra from './componentes/barra/barra';
+import Reporte from './componentes/reporte/reporte';
 import "./App.css"
+import { useDispatch } from 'react-redux';
 
 function App() { 
   
@@ -15,6 +17,7 @@ function App() {
   
     const onUbicacionConcedida = ubicacion => { //funcion que recibira un objeto con la info de la ubicacion actual
       console.log("Tengo la ubicación: ", ubicacion);
+
     }
     
     const onErrorDeUbicacion = err => { // funcion que maneja errores
@@ -31,13 +34,17 @@ function App() {
   
   };
 
+  useEffect(()=>{
+    funcionInit()
+  })
+
   return (
     <>
-    <button onClick={funcionInit}>dar</button>
     <Barra/>
     <Routes>
       <Route path='/inicio' element={<Inicio/>}/>
       <Route path='/busqueda' element={<Busqueda/>}/>
+      <Route path='/reporte/:lat/:lon/clima' element={<Reporte/>}/>
     </Routes>
     </>
   )
