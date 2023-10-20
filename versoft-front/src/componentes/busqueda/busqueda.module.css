@@ -1,10 +1,40 @@
 .contenedor{
-    width: 100%;
-   
+    min-width: 300px;
+    width: 85%;
+    height: 100%;
+    min-height: 500px;
+    height: fit-content;
+    position: absolute;
+    top:10%;
+    border: solid 1px;
+    border-color: orange;
+    background-color: white;
+    margin-top: 50px;
 }
 
 .buscador{
- width: 90%;
- position: absolute;
- top: 5%;
+    top: 5%;
+    left: 29%;
+    margin: auto;
+    position: fixed;
+    z-index: 1000;
+    border: solid 2px;
+    border-color: orange;
+    background-color: white;
+}
+
+.icon{
+    position: absolute;
+    top: 20%;
+    left: 19%;
+    width: 60%;
+    height: 60%;
+    color: orange;
+}
+
+.input{
+    height: 50px;
+    border: solid 1px;
+    border-color: orange;
+    background-color: white;
 }

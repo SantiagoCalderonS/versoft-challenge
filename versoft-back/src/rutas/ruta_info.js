@@ -1,9 +1,9 @@
-// en cada ruta se puede seguir especificando en endpoint de la peticion ".../####"
-//se requiere y se instancia eL Router, se le da un nombre caracteristico
+// en cada ruta se puede seguir especificando el endpoint de la peticion ".../####"
+//se requiere y se instancia Router de Express, se le da un nombre caracteristico
 
 const ruta_info = require("express").Router();
 
-//importar la funcion que dara la respuesta
+//importar la funcion que dara la respuesta (res)
 const {obtener_info} = require("../controladores/info")
 
 

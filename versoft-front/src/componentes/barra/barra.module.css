@@ -1,10 +1,19 @@
+
+
+
 .tablilla{
     display: flex;
     flex-direction: column;
 }
 
+.boton{
+    background-color: orange;
+    color: white;
+}
+
 .barraLateral{
-    position: fixed;
+        position: fixed;
+    z-index: 9999;
     left: 1%;
     top: 4%;
     width: 10%;

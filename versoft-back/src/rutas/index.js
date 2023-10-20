@@ -3,13 +3,14 @@ const ruta_info = require("./ruta_info")
 
 const router = require("express").Router();
 
+//se separan las peticiones segun su ruta
 router.use("/ubicacion", ruta_ubicacion)
 router.use("/info", ruta_info)
 
 module.exports= router
 
 
-/*endpoint a usar de la API 
+/*posibles endpoint a usar de la API 
 http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={API key} // 
 con la info proporcionada por el usuario se buscaran los posibles resultados,
  el usuario escogera el deseado y con su latitud y la longitud se busacara la info

@@ -6,33 +6,46 @@ import { Button, Card } from "react-bootstrap";
 import style from "./resultados.module.css"
 import { Link } from "react-router-dom";
 
-const Resultados = ({pais}) =>{
+const Resultados = ({municipio}) =>{//este componente es para mostrar cada uno de los posibles resultados de la busqueda realizada
 
-    const [nacion, setNacion] = useState("")
+    //estructura de "municipio"
+    /*
+              { nombre: string
+                latitud: number
+                longitud : number
+                estado : string
+                pais: string } 
+    */
 
-    function par (pais){
+    const [nacion, setNacion] = useState("")// nombre del pais
+
+    function par (pais){//esta funcion es para obtener el nombre del pais por medio del codigo iso31661
+
         iso31661.forEach((I)=>{
             I.alpha2 === pais ? setNacion(I.name) : ""
         })
     }
 
     useEffect(()=>{
-        par(pais.pais)
-    },[])
+        par(municipio.pais)
+    },[municipio])
 
-    //<i class="fa-regular fa-location-dot"></i>
+
     return(
-        <Link to={`/reporte/${pais.latitud}/${pais.longitud}/clima`}>
+        <Link to={`/reporte/${municipio.latitud}/${municipio.longitud}/${municipio.nombre}/clima`}> {/*todo el componente es un link*/}
         <Card style={{ width: '95%', display: "inline-block", marginTop : "25px" }} >
             <Card.Body className={style.carta}>
                 <div className={style.imagenContenedor}>
-                    <FontAwesomeIcon icon={faLocationDot} className={style.img}/>
+                    <FontAwesomeIcon icon={faLocationDot} className={style.img}/> {/*icono obtenido de una api externa*/}
                 </div>
         
         <div className={style.info}>
-        <div style={{display: "inline-flex"}}><h1>{pais.nombre} </h1><h5> .({pais.estado},{nacion})</h5></div>
-        <h2>Latitud:{pais.latitud}</h2>
-        <h2>Longitud:{pais.longitud}</h2>
+        <div style={{display: "inline-flex"}}><h1>{municipio.nombre} </h1>
+        {  municipio.estado /*algunos resultados carecian de esta prop*/ ?
+        (<h5> .({municipio.estado},{nacion})</h5>) : (<h5> .({nacion})</h5>)}
+        </div>
+        <h2>Latitud:{municipio.latitud}</h2>
+        <h2>Longitud:{municipio.longitud}</h2>
         </div>
             </Card.Body>
         </Card>
@@ -41,14 +54,3 @@ const Resultados = ({pais}) =>{
 }
 
 export default Resultados
-
-/*
-        <Card.Img variant="top" src={criatura.image}  style={{height: "300px"}}/>
-        
-          <Card.Title>{pais.nombre}</Card.Title>
-          <Card.Text>
-              {pais.estado}
-          </Card.Text>
-          <Button onClick={changeMonster}>vanguardia</Button>
-        
-       */

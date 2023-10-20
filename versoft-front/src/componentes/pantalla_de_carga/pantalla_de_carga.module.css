@@ -1,0 +1,23 @@
+.contenedor{
+    position: absolute;
+    top: 35%;
+    left: 34%;
+    width: 40%;
+    height: 40%;
+   
+    
+}
+
+@keyframes giro {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+.img{
+    animation: giro 1.5s linear infinite;
+    width: 100%;
+    height: 100%; 
+    color: rgb(184, 184, 184);
+}
+
+

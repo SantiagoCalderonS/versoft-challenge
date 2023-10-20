@@ -1,6 +1,6 @@
 import axios from "axios"
 
-export const conseguir_paises = ({pais, ciudad}) =>{
+export const conseguir_municipios = ({pais, ciudad}) =>{
     return async (dispatch) => {
         try {
             const {data} = await axios.get(`http://localhost:3001/ubicacion?pais=${pais}&ciudad=${ciudad}`); // request
@@ -10,10 +10,8 @@ export const conseguir_paises = ({pais, ciudad}) =>{
                 payload: data,
             });
         } catch (error) {
-         
-          return dispatch({
-            type: "ERROR",
-            payload: true
+            return dispatch({
+            type: "ERROR_LISTA",
         });
         }
     };
@@ -31,11 +29,16 @@ export const conseguir_info = (lat, lon) =>{
         } catch (error) {
          
           return dispatch({
-            type: "ERROR",
-            payload: true
+            type: "ERROR_INFO"
         });
         }
     };
+}
+
+export const borrar_errores = () =>{
+    return{
+        type: "BORRAR_ERRORES"
+    }
 }
 
 export const borrar_info = () =>{
@@ -51,3 +54,8 @@ export const info_usuario = (info) => {
     }
 }
 
+export const sin_info_usuario = () => {
+    return{
+        type: "ERROR_USER"
+    }
+}
