@@ -28,9 +28,7 @@ const obtener_info = async(req, res)=>{/*funcion que hace una peticion a la API 
             datos : {
                 temperatura : data.main.temp,
                 presion : data.main.pressure,
-                humedad : data.main.humidity,
-                nivel_del_mar: data.main.sea_level,
-                nivel_del_suelo: data.main.grnd_level,
+                humedad : data.main.humidity
             }
         }
 

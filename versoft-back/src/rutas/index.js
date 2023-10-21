@@ -3,7 +3,7 @@ const ruta_info = require("./ruta_info")
 
 const router = require("express").Router();
 
-//se separan las peticiones segun su ruta
+//se separan las peticiones
 router.use("/ubicacion", ruta_ubicacion)
 router.use("/info", ruta_info)
 

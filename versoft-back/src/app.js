@@ -13,7 +13,7 @@ app.use(express.json()); // transforma json en objetos
 
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");         // permite conexion de cualquier direccion 
-    res.header("Access-Control-Allow-Credentials", "true"); //esto lo copie de un trabajo grupal
+    res.header("Access-Control-Allow-Credentials", "true"); //esto lo copie de un proyecto grupal previo
     res.header(
         "Access-Control-Allow-Headers",
         "Origin, X-Requested-With, Content-Type, Accept"

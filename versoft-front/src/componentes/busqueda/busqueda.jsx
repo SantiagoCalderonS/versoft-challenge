@@ -41,7 +41,7 @@ const Busqueda = () =>{
         event.preventDefault()
         dispatch(conseguir_municipios(sitio)) //este dispatch permite la busqueda de los elementos deseados
         setShow(true)
-        setTimeout(()=>{setIsLoading(false)}, 4500)
+        setTimeout(()=>{setIsLoading(false)}, 1500)
     }
 
     useEffect(()=>{

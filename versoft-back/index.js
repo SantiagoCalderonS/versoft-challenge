@@ -1,5 +1,9 @@
 const app = require("./src/app");
-const PORT = 3001;
+//________________________________DATOS DE ENTORNO
+require("dotenv").config();
+const {PORT} = process.env
+//___________________________________
+
 
 
 app.listen(PORT, ()=>console.log("iniciado"))
