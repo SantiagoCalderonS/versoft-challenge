@@ -14,7 +14,7 @@ function App() {
     <div>
     <Barra/>
     <Routes>
-      <Route path='/inicio' element={<Inicio/>}/>
+      <Route path='/' element={<Inicio/>}/>
       <Route path='/busqueda' element={<Busqueda/>}/>
       <Route path='/reporte/:lat/:lon/:ciudad/clima' element={<Reporte/>}/>
     </Routes>

@@ -43,8 +43,25 @@ const Inicio = () =>{//pagina inicial de la pagina, aqui podra ver el clima de s
       };
 
     return(
-    <div className={style.contenedor}>
-        {!user.latitud && !error.valor? 
+    <div>
+        { error.valor?<Mensaje_error mensaje={error.mensaje}/>
+        : //este boton solo aparece si no existe info del usuario o algun error
+        (<div className={style.contenedor}>
+          { !user.latitud && !error.valor? (<div className={style.pasos}>
+          <h1>PRESIONE AQUI PARA ENCONTRAR SU POSICION</h1>
+          <button onClick={funcionInit} className={style.boton}><FontAwesomeIcon icon={faMagnifyingGlass} className={style.img}/></button>
+        </div>)://si exite error aparece el mensaje, si no da un link al "reporte" de tu ubicacion actual
+          (<div className={style.pasos}>
+            <h1>PRESIONE PARA OBTENER EL REPORTE DEL CLIMA</h1>
+            <Link to={`/reporte/${user.latitud}/${user.longitud}/tuUbicacion/clima`}><button className={style.boton}><FontAwesomeIcon icon={faCheck} className={style.img}/></button></Link>
+          </div>)}
+        </div>)} 
+    </div>
+    )
+}
+
+/*
+ {!user.latitud && !error.valor? 
         (<div className={style.pasos}>
           <h1>PRESIONE AQUI PARA ENCONTRAR SU POSICION</h1>
           <button onClick={funcionInit} className={style.boton}><FontAwesomeIcon icon={faMagnifyingGlass} className={style.img}/></button>
@@ -56,8 +73,6 @@ const Inicio = () =>{//pagina inicial de la pagina, aqui podra ver el clima de s
             <Link to={`/reporte/${user.latitud}/${user.longitud}/tuUbicacion/clima`}><button className={style.boton}><FontAwesomeIcon icon={faCheck} className={style.img}/></button></Link>
           </div>)}
         </div>)}
-    </div>
-    )
-}
+*/
 
 export default Inicio

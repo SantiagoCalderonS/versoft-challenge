@@ -25,7 +25,7 @@ const Barra = () =>{
         </Offcanvas.Header>
         <Offcanvas.Body>
         <Nav className={style.tablilla}>
-          <Link to="/inicio"><Button style={{ width: '90%', height: "100px", marginTop: "30px", backgroundColor: "white", color: "orange", borderColor: "orange"}}><h2>Tu ubicacion</h2></Button></Link>
+          <Link to="/"><Button style={{ width: '90%', height: "100px", marginTop: "30px", backgroundColor: "white", color: "orange", borderColor: "orange"}}><h2>Tu ubicacion</h2></Button></Link>
           <Link to="/busqueda"><Button style={{ width: '90%', height: "100px", marginTop: "30px", backgroundColor: "white", color: "orange", borderColor: "orange"}}><h2>Mundo</h2></Button></Link>
 
           </Nav>
