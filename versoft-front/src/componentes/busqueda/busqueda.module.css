@@ -9,6 +9,7 @@
     margin: auto;
     border: solid 1px;
     border-color: orange;
+    border-radius: 5px;
     background-color: white;
     margin-top: 50px;
 }
@@ -20,6 +21,7 @@
     z-index: 1000;
     border: solid 2px;
     border-color: orange;
+    border-radius: 5px;
     background-color: white;
 }
 

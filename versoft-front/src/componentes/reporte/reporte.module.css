@@ -5,11 +5,12 @@
     background-color: white;
     border: solid 2px;
     border-color: orange;
+    border-radius: 5px;
     position: relative;
     left: 5%;
     text-align: center;
-    
     margin-top: 4%;
+    margin-bottom: 10%;
 }
 
 
@@ -38,7 +39,7 @@
 .dato{
     display: flex;
     flex-direction: row;
-    height: 100px;
+    height: 90px;
     position: relative;
     left: 10%;
 }
@@ -53,4 +54,21 @@
     border-left:  solid 2px;
     border-right:  solid 2px;
     border-color: orange
+}
+
+.boton{
+    width: 100%;
+    margin-top: 5%;
+    background-color: white;
+    border: solid 2px;
+    border-color: orange;
+    border-radius: 5px;
+}
+
+.boton:hover{
+    transform: scale(1.02);
+        background-color: orange;
+        transition-duration: 0.2s;
+        cursor: pointer;
+        color: rgb(0, 0, 0);
 }

@@ -106,7 +106,7 @@ const Reporte = () =>{
                 </>
                 </div>
                 </div>
-                <Button onClick={actualizar_info}>ACTUALIZAR</Button>
+                <button className={style.boton} onClick={actualizar_info}>ACTUALIZAR</button>
             </div>
             )
             }

@@ -5,7 +5,7 @@ import { info_usuario, sin_info_usuario } from "../../../redux/actions"
 import { Link } from "react-router-dom"
 import Mensaje_error from "../mensaje_error/mensaje_error"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass, faCheck } from '@fortawesome/free-solid-svg-icons';
 import style from "./inicio.module.css"
 
 const Inicio = () =>{//pagina inicial de la pagina, aqui podra ver el clima de su ubicacion actual
@@ -44,10 +44,17 @@ const Inicio = () =>{//pagina inicial de la pagina, aqui podra ver el clima de s
 
     return(
     <div className={style.contenedor}>
-        {!user.latitud && !error.valor? <button onClick={funcionInit}><FontAwesomeIcon icon={faMagnifyingGlass}/></button>: //este boton solo aparece si no existe info del usuario o algun error
+        {!user.latitud && !error.valor? 
+        (<div className={style.pasos}>
+          <h1>PRESIONE AQUI PARA ENCONTRAR SU POSICION</h1>
+          <button onClick={funcionInit} className={style.boton}><FontAwesomeIcon icon={faMagnifyingGlass} className={style.img}/></button>
+        </div>): //este boton solo aparece si no existe info del usuario o algun error
         (<div>
           {error.valor? <Mensaje_error mensaje={error.mensaje}/>://si exite error aparece el mensaje, si no da un link al "reporte" de tu ubicacion actual
-          <Link to={`/reporte/${user.latitud}/${user.longitud}/tuUbicacion/clima`} ><button>obtener reporte</button></Link>}
+          (<div className={style.pasos}>
+            <h1>PRESIONE PARA OBTENER EL REPORTE DEL CLIMA</h1>
+            <Link to={`/reporte/${user.latitud}/${user.longitud}/tuUbicacion/clima`}><button className={style.boton}><FontAwesomeIcon icon={faCheck} className={style.img}/></button></Link>
+          </div>)}
         </div>)}
     </div>
     )
