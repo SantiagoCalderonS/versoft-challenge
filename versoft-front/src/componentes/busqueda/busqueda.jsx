@@ -29,7 +29,7 @@ const Busqueda = () =>{
         const name = event.target.name;
         const value = event.target.value
 
-        //____________para recetear los valores del estado local mientras se escribe la proxima zona__________________________
+        //_______para recetear los valores del estado local mientras se escribe la proxima zona a buscar__________________________
         setIsLoading(true)
         setShow(false)
         //__________________________________
@@ -60,11 +60,11 @@ const Busqueda = () =>{
             </select>
 
             { sitio.pais && sitio.ciudad ? (<input type="submit" name="submit" onClick={subir_info} className={style.input}></input>) : "" }
-            </form>
+            </form>{/*si no tiene la ciudad o el pais no permite la compra*/}
 
             {!show ? <FontAwesomeIcon icon={faMap} className={style.icon}/> : (
-                <div name="lista"> {/*contenedor de todos los resultados obtenidos en la busqueda*/}
-                {isLoading? <Pantalla_de_carga/> : 
+                <div name="lista"> {/*contenedor de todos los RESULTADOS obtenidos en la busqueda*/}
+                {isLoading ? <Pantalla_de_carga/> : 
                 (
                 <div>
                     { error.valor ? <Mensaje_error mensaje={error.mensaje}/> :

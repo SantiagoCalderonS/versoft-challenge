@@ -30,8 +30,6 @@ const Reporte = () =>{
                 temperatura : number,
                 presion : number,
                 humedad : number,
-                nivel_del_mar: number,
-                nivel_del_suele: number
             }
           }
     */
@@ -43,8 +41,11 @@ const Reporte = () =>{
     
     const {lat, lon, ciudad} = useParams()//datos necesarios para realizar la peticion al server
 
-    function actualizar_info (){
-        dispatch(conseguir_info(lat, lon)) //para obtener info reciente
+    //la API aveces difiere en el nombre de las ciudades aunque le pase la mismas coords,
+    //por lo que pase el nombre por params, si ese nombre es "tuUbicacion" (que puse en inicio) tomara la info dada por la API 
+
+    function actualizar_info (){//para obtener info reciente
+        dispatch(conseguir_info(lat, lon)) 
     }
 
 
@@ -106,7 +107,7 @@ const Reporte = () =>{
                 </>
                 </div>
                 </div>
-                <button className={style.boton} onClick={actualizar_info}>ACTUALIZAR</button>
+                <button className={style.boton} onClick={actualizar_info}>ACTUALIZAR</button>{/*boton para actualizar la info*/}
             </div>
             )
             }

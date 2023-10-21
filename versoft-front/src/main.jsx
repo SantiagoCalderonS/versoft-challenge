@@ -9,8 +9,8 @@ import store from '../redux/store.js';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Provider store={store}>
-    <BrowserRouter>
+    <Provider store={store}>{/*estado global, donde se guardara la info*/}
+    <BrowserRouter>{/*enrutador del proyecto, permite el uso de rutas*/}
     <App />
     </BrowserRouter>
     </Provider>

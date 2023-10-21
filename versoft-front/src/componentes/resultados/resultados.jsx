@@ -19,7 +19,7 @@ const Resultados = ({municipio}) =>{//este componente es para mostrar cada uno d
 
 
     return(
-        <Link to={`/reporte/${municipio.latitud}/${municipio.longitud}/${municipio.nombre}/clima`}> {/*todo el componente es un link*/}
+        <Link to={`/reporte/${municipio.latitud}/${municipio.longitud}/${municipio.nombre}/clima`}> {/*todo el componente es un link a "/REPORTE" (componente que renderizara la info)*/}
         <Card style={{ width: '95%', display: "inline-block", marginTop : "25px" }} >
             <Card.Body className={style.carta}>
                 <div className={style.imagenContenedor}>
