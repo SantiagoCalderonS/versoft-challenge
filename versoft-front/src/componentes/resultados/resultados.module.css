@@ -1,3 +1,7 @@
+.contenedor{
+    width: 100%;
+}
+
 .carta{
     width: 90%;
     display: flex;
@@ -15,9 +19,6 @@
   height: auto;
 }
 
-.contenedor{
-    width: 100%;
-}
 
 .info{
     margin: auto;

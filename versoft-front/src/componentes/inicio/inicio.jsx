@@ -44,9 +44,9 @@ const Inicio = () =>{//pagina inicial de la pagina, aqui podra ver el clima de s
 
     return(
     <div className={style.contenedor}>
-        {!user.latitud && !error? <button onClick={funcionInit}><FontAwesomeIcon icon={faMagnifyingGlass}/></button>: //este boton solo aparece si no existe info del usuario o algun error
+        {!user.latitud && !error.valor? <button onClick={funcionInit}><FontAwesomeIcon icon={faMagnifyingGlass}/></button>: //este boton solo aparece si no existe info del usuario o algun error
         (<div>
-          {error? <Mensaje_error/>://si exite error aparece el mensaje, si no da un link al "reporte" de tu ubicacion actual
+          {error.valor? <Mensaje_error mensaje={error.mensaje}/>://si exite error aparece el mensaje, si no da un link al "reporte" de tu ubicacion actual
           <Link to={`/reporte/${user.latitud}/${user.longitud}/tuUbicacion/clima`} ><button>obtener reporte</button></Link>}
         </div>)}
     </div>

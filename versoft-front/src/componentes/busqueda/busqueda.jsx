@@ -67,7 +67,7 @@ const Busqueda = () =>{
                 {isLoading? <Pantalla_de_carga/> : 
                 (
                 <div>
-                    { error ? (<Mensaje_error/>) :
+                    { error.valor ? <Mensaje_error mensaje={error.mensaje}/> :
                 municipios?.map( (P)=>{
                     return(
                         <Resultados municipio={P}/>

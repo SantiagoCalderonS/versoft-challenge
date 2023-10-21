@@ -17,19 +17,6 @@ const Resultados = ({municipio}) =>{//este componente es para mostrar cada uno d
                 pais: string } 
     */
 
-    const [nacion, setNacion] = useState("")// nombre del pais
-
-    function par (pais){//esta funcion es para obtener el nombre del pais por medio del codigo iso31661
-
-        iso31661.forEach((I)=>{
-            I.alpha2 === pais ? setNacion(I.name) : ""
-        })
-    }
-
-    useEffect(()=>{
-        par(municipio.pais)
-    },[municipio])
-
 
     return(
         <Link to={`/reporte/${municipio.latitud}/${municipio.longitud}/${municipio.nombre}/clima`}> {/*todo el componente es un link*/}
@@ -42,7 +29,7 @@ const Resultados = ({municipio}) =>{//este componente es para mostrar cada uno d
         <div className={style.info}>
         <div style={{display: "inline-flex"}}><h1>{municipio.nombre} </h1>
         {  municipio.estado /*algunos resultados carecian de esta prop*/ ?
-        (<h5> .({municipio.estado},{nacion})</h5>) : (<h5> .({nacion})</h5>)}
+        (<h5> .({municipio.estado},{municipio.pais})</h5>) : (<h5> .({municipio.pais})</h5>)}
         </div>
         <h2>Latitud:{municipio.latitud}</h2>
         <h2>Longitud:{municipio.longitud}</h2>

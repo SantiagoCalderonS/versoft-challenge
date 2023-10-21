@@ -1,11 +1,12 @@
 .contenedor{
     min-width: 300px;
-    width: 85%;
+    width: 90%;
     height: 100%;
     min-height: 500px;
     height: fit-content;
     position: absolute;
     top:10%;
+    margin: auto;
     border: solid 1px;
     border-color: orange;
     background-color: white;
@@ -14,8 +15,7 @@
 
 .buscador{
     top: 5%;
-    left: 29%;
-    margin: auto;
+    left: 25%;
     position: fixed;
     z-index: 1000;
     border: solid 2px;
