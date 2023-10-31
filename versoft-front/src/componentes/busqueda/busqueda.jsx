@@ -53,13 +53,13 @@ const Busqueda = () =>{
             <form className={style.buscador}> {/*este es el formulario para entregar los datos especificos que se buscara*/}
             <input name="ciudad" required={true} onChange={contener_info} type="text" className={style.input}></input>
 
-            <select name="pais" onChange={contener_info} className={style.input}>
+            <select name="pais" onChange={contener_info} className={style.select}>
                 {iso31661.map((I)=>{
                     if(I.state === "assigned") return(<option value={I.alpha2}>{I.name}:{I.alpha2}</option>)
                 })}
             </select>
 
-            { sitio.pais && sitio.ciudad ? (<input type="submit" name="submit" onClick={subir_info} className={style.input}></input>) : "" }
+            { sitio.pais && sitio.ciudad ? (<input type="submit" name="submit" onClick={subir_info} className={style.boton}></input>) : "" }
             </form>{/*si no tiene la ciudad o el pais no permite la compra*/}
 
             {!show ? <FontAwesomeIcon icon={faMap} className={style.icon}/> : (

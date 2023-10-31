@@ -12,7 +12,7 @@ function App() {
   
 
   return (
-    <div>
+    <div className='div'>
     <Barra/>
     <Routes>
       <Route path='/' element={<Inicio/>}/>

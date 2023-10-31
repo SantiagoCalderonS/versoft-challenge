@@ -79,7 +79,7 @@ const Reporte = () =>{
                 <div className={style.pag}>
                 <img src={info.clima.iconoUrl} className={style.img}/>
                 <h1>{info.clima.nombre}</h1>
-                <h3>{info.clima.descripcion}</h3>
+                <h3>({info.clima.descripcion})</h3>
                 </div>
 
                 <div className={style.pag}>
@@ -102,7 +102,7 @@ const Reporte = () =>{
                 </div>
                 <div className={style.dato}>
                 <FontAwesomeIcon icon={faDroplet} className={style.icons}/>
-                {info.datos.humedad ? <h1>Humeda:{info.datos.humedad}%</h1> : <h1>Sin datos</h1>}
+                {info.datos.humedad ? <h1>Humeda: {info.datos.humedad}%</h1> : <h1>Sin datos</h1>}
                 </div>
                 </>
                 </div>

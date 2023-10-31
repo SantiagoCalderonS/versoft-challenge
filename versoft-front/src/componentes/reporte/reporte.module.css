@@ -1,15 +1,14 @@
 .reporte{
     width: 90%;
-    height: 100%;
-    min-height: 600px;
-    background-color: white;
+    min-height: 400px;
+    background-color: rgb(255, 255, 255);
     border: solid 2px;
     border-color: orange;
     border-radius: 5px;
     position: relative;
     left: 5%;
     text-align: center;
-    margin-top: 4%;
+    margin-top: 25%;
     margin-bottom: 10%;
 }
 
@@ -31,26 +30,36 @@
 }
 
 .icons{
-    width: 70px;
-    height: 70px;
+    width: 10vw;
+    height: 10vh;
     color:orange;
 }
 
 .dato{
+    width: 90%;
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
     height: 90px;
     position: relative;
     left: 10%;
+    text-align:left;
+}
+
+.dato h1{
+    width: 100%;
+    font-size: 3vw;
 }
 
 .img{
     width: 70%;
+    background-color: rgb(207, 207, 207);
+    border-radius: 10px;
 }
 
 .pag{
     width: 50%;
-    align-items:end;
     border-left:  solid 2px;
     border-right:  solid 2px;
     border-color: orange
@@ -71,4 +80,17 @@
         transition-duration: 0.2s;
         cursor: pointer;
         color: rgb(0, 0, 0);
+}
+
+
+@media (max-width: 768px) {
+    .libro{
+        display: flex;
+        flex-direction: column;
+    }
+    .pag{width: 100%;}
+    .dato h1{
+        width: 100%;
+        font-size: 5vw;
+    }
 }

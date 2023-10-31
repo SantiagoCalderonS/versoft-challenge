@@ -1,9 +1,9 @@
 .contenedor{
-    
+    width: 80%;
     color: white;
-    position: absolute;
-    top: 25%;
-    left: 10%;
+    position: relative;
+    top: 15%;
+    margin: auto;
 }
 
 .pasos{
@@ -13,35 +13,51 @@
 }
 
 .pasos h1{
-    max-width: 50%;
-    font-size: 70px;
+    width: 50%;
+    font-size: 6vw;
     background-color: orange;
     color: white;
     border: solid 5px;
     border-color: orange;
     border-radius: 5px;
+    
 }
 
-.Link{
+.link{
     width: 50%;
-    min-height: 100%;
+    height: 100%;
 }
 
 .boton{
-    width: 400px;
-    height: 400px;
-    margin-left: 3%;
+    min-width: 50%;
+     margin-left: 3%;
     background-color: orange;
     color: white;
     border: solid 5px;
     border-color: orange;
     border-radius: 10px;
-    animation: brillo 5s linear infinite ;
+    animation: brillo 2s linear infinite ;
 }
+
+.boton_link{
+    min-width: 100%;
+     margin-left: 3%;
+    background-color: orange;
+    color: white;
+    border: solid 5px;
+    border-color: orange;
+    border-radius: 10px;
+    animation: brillo 2s linear infinite ;
+}
+
+
+
+
 
 .img{
     width: 100%;
     height: 100%;
+    max-height: 70vh;
 }
 
 
@@ -51,3 +67,29 @@
     100% { transform: scale(1.0); color: orange; background-color: white;}
 }
 
+
+@media (max-width: 768px) {
+    .pasos{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pasos h1{
+        width: 100%;
+    }
+
+    .boton{
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 10%;
+    }
+    .boton_link{
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 10%;
+    }
+
+    .link{
+        width: 100%;
+    }
+}

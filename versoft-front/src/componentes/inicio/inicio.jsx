@@ -43,7 +43,7 @@ const Inicio = () =>{//pagina inicial de la pagina, aqui podra ver el clima de s
       };
 
     return(
-    <div>
+    <div style={{width: "100%", height: "100%"}}>
         { error.valor?<Mensaje_error mensaje={error.mensaje}/>//si exite error aparece el mensaje
         : 
         (<div className={style.contenedor}>
@@ -56,7 +56,7 @@ const Inicio = () =>{//pagina inicial de la pagina, aqui podra ver el clima de s
         //con este boton se mostrara el reporte del clima de tu ubicacion actual
           (<div className={style.pasos}>
             <h1>PRESIONE PARA OBTENER EL REPORTE DEL CLIMA</h1>
-            <Link to={`/reporte/${user.latitud}/${user.longitud}/tuUbicacion/clima`}><button className={style.boton}><FontAwesomeIcon icon={faCheck} className={style.img}/></button></Link>
+            <Link to={`/reporte/${user.latitud}/${user.longitud}/tuUbicacion/clima`} className={style.link}><button className={style.boton_link}><FontAwesomeIcon icon={faCheck} className={style.img}/></button></Link>
           </div>)}
         </div>)} 
     </div>

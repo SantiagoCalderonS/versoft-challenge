@@ -1,6 +1,7 @@
 import axios from "axios"
 import { iso31661 } from "iso-3166"
 
+
 function par (code){//esta funcion es para obtener el nombre del pais por medio del codigo iso31661
 
     let pais = ""
