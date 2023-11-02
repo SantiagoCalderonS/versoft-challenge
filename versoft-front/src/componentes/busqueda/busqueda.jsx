@@ -41,6 +41,7 @@ const Busqueda = () =>{
         event.preventDefault()
         dispatch(conseguir_municipios(sitio)) //este dispatch permite la busqueda de los elementos deseados
         setShow(true)
+        setSitio({ciudad: 0, pais: 0})
         setTimeout(()=>{setIsLoading(false)}, 1500)
     }
 
@@ -62,7 +63,7 @@ const Busqueda = () =>{
             { sitio.pais && sitio.ciudad ? (<input type="submit" name="submit" onClick={subir_info} className={style.boton}></input>) : "" }
             </form>{/*si no tiene la ciudad o el pais no permite la compra*/}
 
-            {!show ? <FontAwesomeIcon icon={faMap} className={style.icon}/> : (
+            {!show ? <FontAwesomeIcon icon={faMap} className={style.icon}/>/*si show es true, se mostrara lo de abajo*/ : (
                 <div name="lista"> {/*contenedor de todos los RESULTADOS obtenidos en la busqueda*/}
                 {isLoading ? <Pantalla_de_carga/> : 
                 (

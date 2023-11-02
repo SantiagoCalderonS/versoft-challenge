@@ -1,5 +1,9 @@
-
-
+.offcanvas{
+    width: 20vw;
+    height: 100%;
+    color: orange;
+    background-color: orange;
+}
 
 .tablilla{
     display: flex;
@@ -21,11 +25,16 @@
   
 
   @media (max-width: 768px) {
+
+.offcanvas{
+    background-Color: orange;
+    width: 60vw;
+}
     
 .tablilla{
     display: flex;
     flex-direction: column;
-    width: 50vw;
+    width: 60vw;
 }
 
 .boton{

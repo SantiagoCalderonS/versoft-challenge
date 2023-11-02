@@ -72,37 +72,37 @@ const Reporte = () =>{
                 { error.valor ? <Mensaje_error  mensaje={error.mensaje}/> : /* en caso de error carga este componente*/
             (
             <div className={style.contenedor}>
-                {ciudad === "tuUbicacion"? <h1>{info.nombre}</h1> : <h1>{ciudad}</h1>}
+                {ciudad === "tuUbicacion"? <h1>{info?.nombre}</h1> : <h1>{ciudad}</h1>}
 
                 <div className={style.libro}>
 
                 <div className={style.pag}>
-                <img src={info.clima.iconoUrl} className={style.img}/>
-                <h1>{info.clima.nombre}</h1>
-                <h3>({info.clima.descripcion})</h3>
+                <img src={info.clima?.iconoUrl} className={style.img}/>
+                <h1>{info.clima?.nombre}</h1>
+                <h3>({info.clima?.descripcion})</h3>
                 </div>
 
                 <div className={style.pag}>
                     <>
                     <div className={style.dato}>
                 <FontAwesomeIcon icon={faEarthAmerica} className={style.icons}/>
-                {info.pais? <h1>{info.pais}</h1> : <h1>Sin datos</h1>}
+                {info?.pais? <h1>{info?.pais}</h1> : <h1>Sin datos</h1>}
                 </div>
                 <div className={style.dato}>
                 <FontAwesomeIcon icon={faClock} className={style.icons}/>
-                {info.horaLocal? <h1>{info.horaLocal}</h1> : <h1>Sin datos</h1>}
+                {info?.horaLocal? <h1>{info?.horaLocal}</h1> : <h1>Sin datos</h1>}
                 </div>
                 <div className={style.dato}>
                 <FontAwesomeIcon icon={faTemperatureHigh} className={style.icons}/>
-                {info.datos.temperatura ? <h1> {Math.ceil(info.datos.temperatura - 272)} Grados Celsius</h1> : <h1>Sin datos</h1>}
+                {info.datos?.temperatura ? <h1> {Math.ceil(info.datos?.temperatura - 272)} Grados Celsius</h1> : <h1>Sin datos</h1>}
                 </div>
                 <div className={style.dato}>
                 <FontAwesomeIcon icon={faWeightHanging} className={style.icons}/>
-                {info.datos.presion ? <h1>{info.datos.presion} Pascales</h1> : <h1>Sin datos</h1>}
+                {info.datos?.presion ? <h1>{info.datos?.presion} Pascales</h1> : <h1>Sin datos</h1>}
                 </div>
                 <div className={style.dato}>
                 <FontAwesomeIcon icon={faDroplet} className={style.icons}/>
-                {info.datos.humedad ? <h1>Humeda: {info.datos.humedad}%</h1> : <h1>Sin datos</h1>}
+                {info.datos?.humedad ? <h1>Humeda: {info.datos?.humedad}%</h1> : <h1>Sin datos</h1>}
                 </div>
                 </>
                 </div>

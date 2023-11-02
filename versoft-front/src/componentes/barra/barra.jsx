@@ -5,9 +5,10 @@ import { Link } from 'react-router-dom';
 import style from "./barra.module.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlobe } from '@fortawesome/free-solid-svg-icons';
+import useScreenSize from '../../../pantalla';
 
 const Barra = () =>{
-
+  const { width } = useScreenSize()
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);//cerrar barra
@@ -19,14 +20,14 @@ const Barra = () =>{
         <FontAwesomeIcon icon={faGlobe} className={style.icon}/>
         </Button>}
 
-        <Offcanvas show={show} onHide={handleClose} style={{backgroundColor: "orange", width: "60vw"}}>
-        <Offcanvas.Header closeButton style={{color: "white"}}>
+        <Offcanvas show={show} onHide={handleClose} style={{backgroundColor: "orange", width: width < 768 ? "70vw" : "30vw" }}>
+        <Offcanvas.Header closeButton style={{color: "white", borderBottom: "solid 2px"}}>
           <Offcanvas.Title >Explorar</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
         <Nav className={style.tablilla}>
-          <Link to="/"><Button style={{ width: '100%', height: "100px", marginTop: "30px", backgroundColor: "white", color: "orange", borderColor: "orange"}}><h2>Tu ubicacion</h2></Button></Link>
-          <Link to="/busqueda"><Button style={{ width: '100%', height: "100px", marginTop: "30px", backgroundColor: "white", color: "orange", borderColor: "orange"}}><h2>Mundo</h2></Button></Link>
+          <Link to="/"><Button style={{ width: '100%', height: "100px", marginTop: "30px", backgroundColor: "white", color: "orange", borderColor: "white"}}><h2>Tu ubicacion</h2></Button></Link>
+          <Link to="/busqueda"><Button style={{ width: '100%', height: "100px", marginTop: "30px", backgroundColor: "white", color: "orange", borderColor: "white"}}><h2>Mundo</h2></Button></Link>
           {/*se me olvido pasar estos estilos al archivo css*/}
           </Nav>
         </Offcanvas.Body>

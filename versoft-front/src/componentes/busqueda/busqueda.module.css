@@ -5,7 +5,8 @@
     min-height: 500px;
     height: fit-content;
     position: relative;
-    top:20%;
+    top:10%;
+    bottom: 10%;
     margin: auto;
     border: solid 1px;
     border-color: orange;
@@ -60,6 +61,10 @@
 }
 
 @media (max-width: 768px) {
+    .contenedor{
+        top: 20%
+    }
+
     .buscador{
         display: flex;
         flex-direction: column;

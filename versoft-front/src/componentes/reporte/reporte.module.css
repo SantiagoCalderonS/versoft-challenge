@@ -8,8 +8,7 @@
     position: relative;
     left: 5%;
     text-align: center;
-    margin-top: 25%;
-    margin-bottom: 10%;
+    margin-top: 5%;
 }
 
 
@@ -84,13 +83,19 @@
 
 
 @media (max-width: 768px) {
+    .reporte{
+        margin-top: 25%;
+    }
+
     .libro{
         display: flex;
         flex-direction: column;
     }
+
     .pag{width: 100%;}
+
     .dato h1{
         width: 100%;
-        font-size: 5vw;
+        font-size: 6vw;
     }
 }
