@@ -1,0 +1,68 @@
+.land{
+    width : 90% ;
+    height : 90% ;
+    background-color : white ;
+    position : relative ;
+    margin : auto ;
+    top: 5%;
+    bottom: 5%;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px orange;
+    border-radius: 10px ;
+    
+}
+
+.mensaje{
+    width : 90%;
+    height: 90%;
+    position: relative;
+    margin : auto ;
+    top: 5%;
+    bottom: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color : black ;
+}
+
+.mensaje p{
+    width: 60%;
+    height: 90vh;
+    top: 30%;
+    margin: auto;
+    font-size: 2.5vw;
+}
+
+.mensaje button{
+    width: 30%;
+    border: solid 2px orange;
+    border-radius: 5px ;
+}
+
+.mensaje button:hover{
+    background-color: orange;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .mensaje{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .mensaje p{
+        width: 90%;
+        height: 90vh;
+        top: 30%;
+        margin: auto;
+        font-size: 5vw;
+    }
+    
+    .mensaje button{
+        width: 100%;
+        border: solid 2px orange;
+        border-radius: 5px ;
+    }
+    
+}
