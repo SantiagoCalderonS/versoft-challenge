@@ -48,6 +48,14 @@ const Reporte = () =>{
         dispatch(conseguir_info(lat, lon)) 
     }
 
+    const copiar_texto = async (texto) => {//funcion para copiar cierta info sacada de internet 
+        try {
+          await navigator.clipboard.writeText(texto);//metodo basado en promesas
+          console.log('Texto copiado al portapapeles');
+        } catch (err) {
+          console.error('Error al copiar el texto: ', err);
+        }
+      };
 
     useEffect(()=>{
         dispatch(borrar_info())//limpia la info anterior antes de buscar la nueva
@@ -73,6 +81,7 @@ const Reporte = () =>{
             (
             <div className={style.contenedor}>
                 {ciudad === "tuUbicacion"? <h1>{info?.nombre}</h1> : <h1>{ciudad}</h1>}
+                <button onClick={() => copiar_texto(`Latitud: ${lat}, Longitud: ${lon}`)}>Obtener coordenadas</button>
 
                 <div className={style.libro}>
 
